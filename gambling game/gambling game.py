@@ -65,7 +65,7 @@ class Chips:
 def take_bet():
     bet="heii"
     while bet.isdigit()==False:
-        bet=input("enter the bet you r going to put:")
+        bet=input("Enter the bet you r going to put:")
         if bet.isdigit()==False:
             print("Enter valid value")
           
@@ -131,21 +131,23 @@ def dealer_wins(chips):
 def push(chips):
     print("tie!push")
 
-print("Welcome to BlackJack game\nRules are according to classic BlackJack game")
-print("this game is designed for only 1 player against computer if needed can changed to multiple player vs the computer\nRules:")
-print("U place the bet if you win the bet u get bet amount doubled and added to you Acc else u loose ur bet amount")
-print("Intially u will be given 2 cards and dealer will be given 2 cards:and acording to sum of value of your cards u can hit or stand")
-print("if your sum value is higher than 21 u busts and loose ur bet else u can continue to hit or stand")
-print("if you hit the card ,card will be added to your sum ,if sum is less than 21 then youwill be shown one of the cards of dealer first card will be hidden")
-print("if you choose stand ,dealers card will be revealed and his count he will be hit until its greater than or equal to your sum value")
-print("after hiting if dealers sum value is greater than 20 you win dealer busts else you loose the game")
-#print("So assuming you r clear with the game rules")
-print("BONUS YOU WILL GIVEN 100 DOLLARS U CAN PLACE BET ANY AMOUNT FROM IT ACCORDINGLY U CAN PLAY THE GAME")
-print("if you bet 10 from 100 then \n100-10=90\nyou win your balence will be 110(100+10*2) \nelse valence will be 90")
+print("Game Rules:\nInitial Setup:\nYou start with $100.\nPlace a bet, which can be any amount up to your current balance.")
+print("Card Dealing:\nBoth you and the dealer receive two cards.\nYour cards are both face-up.\nThe dealer has one card face-up and one card face-down.")
+print("Gameplay:\nBased on the sum of your cards, you can choose to 'Hit' or 'Stand.'\nIf you 'Hit,' you receive an additional card.")
+print("If the sum of your cards exceeds 21, you bust and lose your bet.\nIf the sum is 21 or less, one of the dealer's cards is revealed.")
+print("If you 'Stand,' the dealer's hidden card is revealed.")
+print("The dealer will continue to 'Hit' until their sum is equal to or greater than your sum.")
+print("If the dealer's sum exceeds 21, the dealer busts, and you win.")
+print("If the dealer's sum is equal to or higher than your sum without busting, you lose the game.")
+print("Winning and Losing:")
+print("If you win, your bet amount is doubled and added to your balance.\nIf you lose, your bet amount is deducted from your balance.")
+print("Example:\nStarting balance: $100.You place a $10 bet.If you win, your balance becomes $120 ($100 + $10 * 2).If you lose, your balance becomes $90 ($100 - $10).Enjoy the game!")
 car="hoi"
 print("")
 while car not in["Y","N","y","n"]:
-    car=input("do you wanna play the game Y or N:")
+    car=input("Do you wanna play the game Y or N:")
+    if car not in["Y","N","y","n"]:
+        print("invalid")
     #car.upper()
 if car=='Y' or car=='y':
  hanger=True
@@ -158,10 +160,10 @@ while hanger:
     if chips.total<=0:
      print("Your game ends here as your balance is not sufficient for making bet to play the game run the game again")
      break
-    print(f"your current balence: {chips.total}")
+    print(f"Your current balence: {chips.total}")
     chips.bet=take_bet()
     while chips.bet>chips.total:
-        print("you cannot bet amount greater than your balance")
+        print("You cannot bet amount greater than your balance")
         chips.bet=take_bet()
     
     os.system('cls')
@@ -185,7 +187,7 @@ while hanger:
         #print(player.value)
         if player.value>=21:
             player_busts(chips)
-            print('bet amount lost:',chips.total)
+            print('Balance remaining:',chips.total)
             break
         elif playing==False:
             show_all(player,dealer)
@@ -200,15 +202,19 @@ while hanger:
             if dealer.value>20:
                 dealer_busts(chips)
                 print("")
-                print('amount left:',chips.total)
+                print('Balance remaining:',chips.total)
                 break
             elif dealer.value>player.value:
                 dealer_wins(chips)
                 print("")
-                print('amount left:',chips.total)
+                print('Balance remaining:',chips.total)
                 break
-
-    tot=input('do you want to play again Y or N :')
+    tot = "xxx"
+    while tot not in["Y","N","y","n"]:
+        tot=input("Do you wanna play the game Y or N:")
+        if tot not in["Y","N","y","n"]:
+            print("invalid")
+    #tot=input('Do you want to play again Y or N :')
     ans=tot.upper()
     if ans=='Y':
         hanger=True
