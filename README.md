@@ -1,2 +1,22 @@
- Intially u will given amount from which you can bet on Intially u will be given 2 cards and dealer will be given 2 cards:and acording to sum of value of your cards u can hit or stand if your sum value is higher than 21 u busts and loose ur bet else u can continue to hit or stand if you hit the card ,card will be added to your sum ,if sum is less than 21 then youwill be shown one of the cards of dealer first card will be hidden if you choose stand ,dealers card will be revealed and his count he will be hit until its greater than or equal to your sum value after hiting if dealers sum value is greater than 20 you win dealer busts else you loose the game
- 
+Game Rules:
+Initial Setup:
+You start with $100.
+Place a bet, which can be any amount up to your current balance.
+Card Dealing:
+Both you and the dealer receive two cards.
+Your cards are both face-up.
+The dealer has one card face-up and one card face-down.
+Gameplay:
+Based on the sum of your cards, you can choose to 'Hit' or 'Stand.'
+If you 'Hit,' you receive an additional card.
+If the sum of your cards exceeds 21, you bust and lose your bet.
+If the sum is 21 or less, one of the dealer's cards is revealed.
+If you 'Stand,' the dealer's hidden card is revealed.
+The dealer will continue to 'Hit' until their sum is equal to or greater than your sum.
+If the dealer's sum exceeds 21, the dealer busts, and you win.
+If the dealer's sum is equal to or higher than your sum without busting, you lose the game.
+Winning and Losing:
+If you win, your bet amount is doubled and added to your balance.
+If you lose, your bet amount is deducted from your balance.
+Example:
+Starting balance: $100.You place a $10 bet.If you win, your balance becomes $120 ($100 + $10 * 2).If you lose, your balance becomes $90 ($100 - $10).Enjoy the game!
